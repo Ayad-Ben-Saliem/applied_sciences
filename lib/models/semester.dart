@@ -70,7 +70,7 @@ abstract class SemesterBase extends Equatable {
 
 @Collection(
   accessor: 'Semesters',
-  ignore: {'props', 'hashCode', 'stringify', 'version'},
+  ignore: {'props', 'hashCode', 'stringify', 'version', 'toJson'},
 )
 class Semester extends SemesterBase {
   Semester({

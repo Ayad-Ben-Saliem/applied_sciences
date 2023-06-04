@@ -2,11 +2,11 @@ import 'package:applied_sciences/models/user.dart';
 import 'package:applied_sciences/services/users_service.dart';
 import 'package:applied_sciences/ui/auth/login_page.dart';
 import 'package:applied_sciences/ui/custom_future_builder.dart';
+import 'package:applied_sciences/ui/home_page.dart';
 import 'package:applied_sciences/ui/users/user_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'home_page.dart';
 
 final authenticatedUser = StateProvider<User?>((ref) => null);
 
@@ -15,11 +15,16 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+
+    final inDecoration = InputDecoration(icon: Icon(Icons.add));
+    final inDec2 = inDecoration.copyWith(
+      labelText: 'Test'
+    );
+
     return MaterialApp(
       title: 'Applied Sciences',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: Consumer(
         builder: (context, ref, child) {
           return CustomFutureBuilder(

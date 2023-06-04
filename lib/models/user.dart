@@ -75,6 +75,6 @@ class User extends Equatable {
         email,
         password,
         enabled,
-    at,
+        at,
       ];
 }

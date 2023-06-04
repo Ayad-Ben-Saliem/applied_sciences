@@ -1,5 +1,9 @@
+import 'package:applied_sciences/ui/actions/actions_page.dart';
 import 'package:applied_sciences/ui/app.dart';
+import 'package:applied_sciences/ui/reports/reports_page.dart';
 import 'package:applied_sciences/ui/semesters/semesters_page.dart';
+import 'package:applied_sciences/ui/settings/settings_page.dart';
+import 'package:applied_sciences/ui/subjects/subjects_page.dart';
 import 'package:applied_sciences/ui/users/users_page.dart';
 import 'package:flutter/material.dart';
 import 'package:applied_sciences/ui/students/students_page.dart';
@@ -73,6 +77,55 @@ class HomePage extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (_) => const SemestersPage(),
+                        ),
+                      );
+                      Scaffold.of(context).closeDrawer();
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Subjects'),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const SubjectsPage(),
+                        ),
+                      );
+                      Scaffold.of(context).closeDrawer();
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Actions'),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const ActionsPage(),
+                        ),
+                      );
+                      Scaffold.of(context).closeDrawer();
+                    },
+                  ),
+
+                  ListTile(
+                    title: const Text('Reports'),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const ReportsPage(),
+                        ),
+                      );
+                      Scaffold.of(context).closeDrawer();
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Settings'),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const SettingsPage(),
                         ),
                       );
                       Scaffold.of(context).closeDrawer();

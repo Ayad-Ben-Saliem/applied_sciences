@@ -1,5 +1,6 @@
 import 'package:applied_sciences/models/semester.dart';
 import 'package:applied_sciences/models/student.dart';
+import 'package:applied_sciences/models/subject.dart';
 import 'package:applied_sciences/models/user.dart';
 import 'package:isar/isar.dart';
 
@@ -8,4 +9,7 @@ final db = Isar.openSync([
   StudentSchema,
   StudentHistorySchema,
   SemesterSchema,
+  SemesterHistorySchema,
+  SubjectSchema,
+  SubjectHistorySchema,
 ]);

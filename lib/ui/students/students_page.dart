@@ -173,7 +173,7 @@ class StudentsPage extends StatelessWidget {
     FilePicker.platform.pickFiles(
       withData: true,
       type: FileType.custom,
-      allowedExtensions: ['json', 'csv', 'xls', 'xlsx', 'xml'],
+      allowedExtensions: ['xls', 'xlsx'],
     ).then((result) {
       if (result != null) {
         final file = result.files.first;
@@ -181,20 +181,6 @@ class StudentsPage extends StatelessWidget {
         final students = <Student>[];
 
         switch (file.extension?.toLowerCase()) {
-          case 'json':
-            final txt = const Utf8Decoder().convert(file.bytes!.toList());
-            var studentsJson = json.decode(txt);
-            if (studentsJson is! List) {
-              return _showMessage(context, 'Invalid data');
-            }
-            studentsJson = studentsJson.cast<JsonMap>();
-            students.addAll(getStudents(studentsJson));
-            break;
-          case 'csv':
-            final txt = const Utf8Decoder().convert(file.bytes!.toList());
-            final table = const CsvToListConverter(eol: '\n').convert(txt);
-            students.addAll(getStudents(table));
-            break;
           case 'xls':
           case 'xlsx':
             var excel = Excel.decodeBytes(file.bytes!);
@@ -202,10 +188,7 @@ class StudentsPage extends StatelessWidget {
               students.addAll(getStudents(sheet.rows));
             }
             break;
-          case 'xml':
-            throw UnimplementedError();
-            break;
-        }
+          }
 
         _importStudentsDialog(context, students);
       }

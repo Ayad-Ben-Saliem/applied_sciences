@@ -2,7 +2,7 @@ import 'package:applied_sciences/services/auth_service.dart';
 import 'package:applied_sciences/static.dart';
 import 'package:applied_sciences/ui/auth/login_page.dart';
 import 'package:applied_sciences/ui/custom-text-field.dart';
-import 'package:applied_sciences/ui/disable-widget.dart';
+import 'package:applied_sciences/ui/disable_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
